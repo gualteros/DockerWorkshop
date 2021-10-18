@@ -12,7 +12,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                echo 'make publish'
+                echo 'make cpublish'
             }
         }
     }
