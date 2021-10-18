@@ -12,25 +12,25 @@ pipeline {
 
         stage('Construccion') {
             steps {
-                echo 'docker pull hello-world'
+                sh 'docker pull hello-world'
             }
         }
 
         stage('analisis') {
             steps {
-                echo 'docker run hello-world'
+                sh 'docker run hello-world'
             }
         }
 
         stage('push') {
             steps {
-                echo 'docker images ls'
+                sh 'docker images ls'
             }
         }
 
         stage('despliegue') {
             steps {
-                echo 'make cpublishsas'
+                sh 'make cpublishsas'
             }
         }
 
