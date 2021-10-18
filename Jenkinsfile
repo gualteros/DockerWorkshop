@@ -12,19 +12,19 @@ pipeline {
 
         stage('Construccion') {
             steps {
-                echo 'docker image ls'
+                echo 'docker pull hello-world'
             }
         }
 
         stage('analisis') {
             steps {
-                echo 'make cpublishsas'
+                echo 'docker run hello-world'
             }
         }
 
         stage('push') {
             steps {
-                echo 'make cpublishsas'
+                echo 'docker images ls'
             }
         }
 
