@@ -12,13 +12,13 @@ pipeline {
 
         stage('Construccion') {
             steps {
-                sh 'docker pull hello-world'
+                sh 'docker pull nexpeque/docker_minecraft'
             }
         }
 
         stage('analisis') {
             steps {
-                sh 'docker run hello-world'
+                sh 'docker run -d -p 25565:25565 --name minecraft-advanced -v /home/daniel/world nexpeque/docker_minecraft:latest'
             }
         }
 
@@ -30,7 +30,7 @@ pipeline {
 
         stage('despliegue') {
             steps {
-                sh 'make cpublishsas'
+                sh 'docker ps'
             }
         }
 
