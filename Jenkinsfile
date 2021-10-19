@@ -13,7 +13,8 @@ pipeline {
     stages {
         stage('Preparacion') { 
             steps { 
-                sh 'whoami' 
+                sh 'whoami'
+                echo 'iniciando el despliegue'  
             }
         }
 
@@ -44,7 +45,7 @@ pipeline {
 
         stage('despliegue') {
             steps {
-                sh 'docker run -d -p 25565:25565 --name danielgualteros/minecraftserver -v /home/daniel/world danielgualteros/minecraftserver:latest'
+                sh 'docker run -d -p 25565:25565 --name minecraftserver -v /home/daniel/world danielgualteros/minecraftserver:latest'
                 sh 'docker ps'
             }
         }
