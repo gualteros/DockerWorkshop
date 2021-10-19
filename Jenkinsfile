@@ -34,11 +34,12 @@ pipeline {
 
         stage('push') {
             steps {
+                script {
                 docker.withRegistry( '', registryCredential ) {
                     dockerImage.push("$BUILD_NUMBER")
                     dockerImage.push('latest')}
                 //sh 'docker push danielgualteros/minecraftserver:minecraftserver'
-            }
+            }}
         }
 
         stage('despliegue') {
