@@ -44,7 +44,7 @@ pipeline {
 
         stage('despliegue') {
             steps {
-                sh 'docker run -d -p 25565:25565 --name minecraft-advanced -v /home/daniel/world imagename:latest'
+                sh 'docker run -d -p 25565:25565 --name danielgualteros/minecraftserver -v /home/daniel/world danielgualteros/minecraftserver:latest'
                 sh 'docker ps'
             }
         }
