@@ -18,10 +18,11 @@ pipeline {
         }
 
         stage('Construccion') {
-
+            steps { 
             script {
                 dockerImage = docker.build imagename
                 //sh 'docker build -t minecraftserver .'
+            }
             }
         }
 
